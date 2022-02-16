@@ -1,4 +1,7 @@
 #! /bin/bash
+#first, let's install needed things for startup, for example, docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 #first let's check your linux version just in case:
 echo 'your linux version is:'
 uname --all
