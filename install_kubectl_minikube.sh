@@ -1,7 +1,7 @@
 #! /bin/bash
 #first, let's install needed things for startup, for example, docker
 curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+sh get-docker.sh
 #add user to docker group
 sudo usermod -aG docker studentk8s
 #first let's check your linux version just in case:
@@ -18,3 +18,11 @@ install minikube-linux-amd64 /usr/local/bin/minikube
 #finally, we will check minikube version
 echo 'your minikube version:'
 minikube version
+
+#add user to docker group
+echo 'adding studentk8s to docker group'
+sudo usermod -aG docker $USER && newgrp docker
+
+#add additinal requirements
+echo 'fixing error with start'
+sudo chown -R $USER $HOME/.minikube; chmod -R u+wrx $HOME/.minikube
