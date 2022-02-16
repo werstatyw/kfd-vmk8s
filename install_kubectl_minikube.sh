@@ -2,6 +2,8 @@
 #first, let's install needed things for startup, for example, docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
+#add user to docker group
+sudo usermod -aG docker studentk8s
 #first let's check your linux version just in case:
 echo 'your linux version is:'
 uname --all
